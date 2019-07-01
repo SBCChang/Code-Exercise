@@ -55,7 +55,7 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Code-Exercise\CodeExercise.csproj">
+    <ProjectReference Include="..\CodeExercise\CodeExercise.csproj">
       <Project>{90098053-5c28-4e25-930f-392940c84e33}</Project>
       <Name>CodeExercise</Name>
     </ProjectReference>
