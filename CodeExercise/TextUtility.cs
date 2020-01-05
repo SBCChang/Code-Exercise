@@ -35,6 +35,11 @@ namespace CodeExercise
             throw new Exception("illegal length");
         }
 
+        public static string GetReverse(string text)
+        {
+            throw new NotImplementedException();
+        }
+
         private static void HandleNonPunctuations(List<string> texts, string[] segments, int index)
         {
             if (index < segments.Length - 1)

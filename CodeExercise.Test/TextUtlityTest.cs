@@ -35,5 +35,15 @@ namespace CodeExercise.Test
             var actual = TextUtility.GetPunctuationMistakesFixed(text);
         }
 
+        [TestMethod]
+        public void GetReverse_NoText_ReturnEmpty()
+        {
+            var text = "";
+            var expected = "";
+            var actual = TextUtility.GetReverse(text);
+            
+            Assert.AreEqual(actual, expected);
+        }
+
     }
 }
