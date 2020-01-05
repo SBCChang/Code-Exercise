@@ -30,10 +30,9 @@ namespace CodeExercise
                         HandleNonPunctuations(texts, segments, index);
                     }
                 }
-
                 return string.Join("", texts);
             }
-            throw new Exception("length illegal");
+            throw new Exception("illegal length");
         }
 
         private static void HandleNonPunctuations(List<string> texts, string[] segments, int index)
