@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text;
 
 namespace CodeExercise
 {
@@ -40,9 +41,15 @@ namespace CodeExercise
             var result = "";
             if (!string.IsNullOrEmpty(text))
             {
+                var reverses = new StringBuilder(text.Length);
                 try
                 {
-
+                    var chars = text.ToCharArray();
+                    for (int i = chars.Length - 1; i >= 0; i--)
+                    {
+                        reverses.Append(chars[i]);
+                    }
+                    return reverses.ToString();
                 }
                 catch { }
             }

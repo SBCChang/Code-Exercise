@@ -45,5 +45,15 @@ namespace CodeExercise.Test
             Assert.AreEqual(actual, expected);
         }
 
+        [TestMethod]
+        public void GetReverse_Basic_ReturnReversed()
+        {
+            var text = "abc";
+            var expected = "cba";
+            var actual = TextUtility.GetReverse(text);
+
+            Assert.AreEqual(actual, expected);
+        }
+
     }
 }
