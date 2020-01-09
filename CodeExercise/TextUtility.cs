@@ -37,7 +37,16 @@ namespace CodeExercise
 
         public static string GetReverse(string text)
         {
-            throw new NotImplementedException();
+            var result = "";
+            if (!string.IsNullOrEmpty(text))
+            {
+                try
+                {
+
+                }
+                catch { }
+            }
+            return result;
         }
 
         private static void HandleNonPunctuations(List<string> texts, string[] segments, int index)
