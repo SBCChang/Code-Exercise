@@ -56,6 +56,33 @@ namespace CodeExercise
             return result;
         }
 
+        public static string GetReverseInRecursive(string text)
+        {
+            var result = "";
+            try
+            {
+                if (!string.IsNullOrEmpty(text))
+                {
+                    var chars = text.ToCharArray();
+                    result = GetCharsInRecursive(chars, chars.Length - 1);
+                }
+            }
+            catch { }
+            return result;
+        }
+
+        private static string GetCharsInRecursive(char[] chars, int i)
+        {
+            if (i == 0)
+            {
+                return chars[i].ToString();
+            }
+            else
+            {
+                return string.Concat(chars[i], GetCharsInRecursive(chars, i - 1));
+            }
+        }
+
         private static void HandleNonPunctuations(List<string> texts, string[] segments, int index)
         {
             if (index < segments.Length - 1)

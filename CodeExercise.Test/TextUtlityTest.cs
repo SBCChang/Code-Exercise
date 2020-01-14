@@ -30,8 +30,8 @@ namespace CodeExercise.Test
         [ExpectedException(typeof(Exception), "illegal length")]
         public void GetPunctuationMistakesFixed_TextLengthOver500_ThrowException()
         {
-            var textSegments = Enumerable.Repeat("text", 101).ToArray();
-            var text = string.Join(",", textSegments);
+            var textSegments = Enumerable.Repeat("a", 501);
+            var text = string.Concat(textSegments);
             var actual = TextUtility.GetPunctuationMistakesFixed(text);
         }
 
@@ -41,7 +41,7 @@ namespace CodeExercise.Test
             var text = "";
             var expected = "";
             var actual = TextUtility.GetReverse(text);
-            
+
             Assert.AreEqual(actual, expected);
         }
 
@@ -53,6 +53,48 @@ namespace CodeExercise.Test
             var actual = TextUtility.GetReverse(text);
 
             Assert.AreEqual(actual, expected);
+        }
+
+        [TestMethod]
+        public void GetReverse_SameChars_ReturnReversed()
+        {
+            var textSegments = Enumerable.Repeat("a", 1000 * 1000);
+            var text = string.Concat(textSegments);
+            var expected = text;
+            var actual = TextUtility.GetReverse(text);
+
+            Assert.AreEqual(expected, actual);
+        }
+
+        [TestMethod]
+        public void GetReverseInRecursive_NoText_ReturnEmpty()
+        {
+            var text = "";
+            var expected = "";
+            var actual = TextUtility.GetReverseInRecursive(text);
+
+            Assert.AreEqual(actual, expected);
+        }
+
+        [TestMethod]
+        public void GetReverseInRecursive_Basic_ReturnReversed()
+        {
+            var text = "abc";
+            var expected = "cba";
+            var actual = TextUtility.GetReverseInRecursive(text);
+
+            Assert.AreEqual(actual, expected);
+        }
+
+        [TestMethod]
+        public void GetReverseInRecursive_SameChars_ReturnReversed()
+        {
+            var textSegments = Enumerable.Repeat("a", 1000 * 1000);
+            var text = string.Concat(textSegments);
+            var expected = text;
+            var actual = TextUtility.GetReverseInRecursive(text);
+
+            Assert.AreEqual(expected, actual);
         }
 
     }
