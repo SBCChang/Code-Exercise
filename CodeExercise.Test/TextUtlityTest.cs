@@ -89,7 +89,7 @@ namespace CodeExercise.Test
         [TestMethod]
         public void GetReverseInRecursive_SameChars_ReturnReversed()
         {
-            var textSegments = Enumerable.Repeat("a", 1000 * 1000);
+            var textSegments = Enumerable.Repeat("a", 1000);
             var text = string.Concat(textSegments);
             var expected = text;
             var actual = TextUtility.GetReverseInRecursive(text);
